@@ -4,13 +4,19 @@
   
   
   <entry>
-    <title></title>
+    <title>docker使用</title>
     <link href="/mijunjie/2024/01/26/docker_foundation/"/>
     <url>/mijunjie/2024/01/26/docker_foundation/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="1-1-Docker安装步骤"><a href="#1-1-Docker安装步骤" class="headerlink" title="1.1 Docker安装步骤"></a>1.1 Docker安装步骤</h1><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs docker"><br></code></pre></td></tr></table></figure><h1 id="1-2-Docker基本命令"><a href="#1-2-Docker基本命令" class="headerlink" title="1.2 Docker基本命令"></a>1.2 Docker基本命令</h1><h2 id="1-2-1-查看-Dcoker-版本"><a href="#1-2-1-查看-Dcoker-版本" class="headerlink" title="1.2.1 查看 Dcoker 版本"></a>1.2.1 查看 Dcoker 版本</h2><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs docker"><span class="hljs-comment"># docker version</span><br>Client:<br> Cloud integration: v1.<span class="hljs-number">0.33</span><br> Version:           <span class="hljs-number">24.0</span>.<span class="hljs-number">2</span><br> API version:       <span class="hljs-number">1.43</span><br> Go version:        go1.<span class="hljs-number">20.4</span><br> Git commit:        cb74dfc<br> Built:             Thu May <span class="hljs-number">25</span> <span class="hljs-number">21</span>:<span class="hljs-number">51</span>:<span class="hljs-number">16</span> <span class="hljs-number">2023</span><br> OS/Arch:           darwin/arm64<br> Context:           desktop-linux<br><br>Server: Docker Desktop <span class="hljs-number">4.20</span>.<span class="hljs-number">1</span> (<span class="hljs-number">110738</span>)<br> Engine:<br>  Version:          <span class="hljs-number">24.0</span>.<span class="hljs-number">2</span><br>  API version:      <span class="hljs-number">1.43</span> (minimum version <span class="hljs-number">1.12</span>)<br>  Go version:       go1.<span class="hljs-number">20.4</span><br>  Git commit:       <span class="hljs-number">659604</span>f<br>  Built:            Thu May <span class="hljs-number">25</span> <span class="hljs-number">21</span>:<span class="hljs-number">50</span>:<span class="hljs-number">59</span> <span class="hljs-number">2023</span><br>  OS/Arch:          linux/arm64<br>  Experimental:     false<br> containerd:<br>  Version:          <span class="hljs-number">1.6</span>.<span class="hljs-number">21</span><br>  GitCommit:        <span class="hljs-number">3</span>dce8eb055cbb6872793272b4f20ed16117344f8<br> runc:<br>  Version:          <span class="hljs-number">1.1</span>.<span class="hljs-number">7</span><br>  GitCommit:        v1.<span class="hljs-number">1.7</span>-<span class="hljs-number">0</span>-g860f061<br> docker-init:<br>  Version:          <span class="hljs-number">0.19</span>.<span class="hljs-number">0</span><br>  GitCommit:        de40ad0<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>docker</tag>
+      
+    </tags>
     
   </entry>
   
