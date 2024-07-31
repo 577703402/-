@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kubernetes 命令参考 | 欢迎来到米俊杰的博客</title>
+  <meta name="keywords" content=" k8s ">
+  <meta name="description" content="Kubernetes 命令参考 | 欢迎来到米俊杰的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="https://577703402.github.io/mijunjie/hello-world.html">
+<meta property="og:site_name" content="欢迎来到米俊杰的博客">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-15T11:44:57.854Z">
+<meta property="article:modified_time" content="2024-01-15T06:31:33.707Z">
+<meta property="article:author" content="Momo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/1.png">
+
+<link href="/mijunjie/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/mijunjie/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/mijunjie/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/mijunjie/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="/mijunjie">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/mijunjie/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/mijunjie/img/1.png"/>
+</a>
+<div class="author">
+    <span>Momo</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://577703402.github.io/mijunjie"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:577703402@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=577703402&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(9)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Linux">
+            
+            Linux
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="Docker">
+            
+            Docker
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="Kubernetes">
+            
+            Kubernetes
+            <small>(6)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="9">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>create github</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>k8s</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 Kubernetes "
+           href="/mijunjie/2024/03/05/Kubernetes/Create%20kubernetes%20cluster/"
+           data-tag="k8s"
+           data-author="" >
+            <span class="post-title" title="Kubeadm高可用安装Kubernetes cluster">Kubeadm高可用安装Kubernetes cluster</span>
+            <span class="post-date" title="2024-03-05 20:57:20">2024/03/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 Kubernetes "
+           href="/mijunjie/2024/03/04/Kubernetes/%E9%9B%86%E7%BE%A4%E5%8F%AF%E7%94%A8%E6%80%A7%E9%AA%8C%E8%AF%81/"
+           data-tag="k8s"
+           data-author="" >
+            <span class="post-title" title="Kubernetes集群可用性验证">Kubernetes集群可用性验证</span>
+            <span class="post-date" title="2024-03-04 23:05:08">2024/03/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 Kubernetes "
+           href="/mijunjie/2024/02/29/Kubernetes/Kubernetes%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83/"
+           data-tag="k8s"
+           data-author="" >
+            <span class="post-title" title="Kubernetes 命令参考">Kubernetes 命令参考</span>
+            <span class="post-date" title="2024-02-29 19:05:12">2024/02/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 Kubernetes "
+           href="/mijunjie/2024/02/29/Kubernetes/Pod%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/"
+           data-tag="k8s"
+           data-author="" >
+            <span class="post-title" title="Pod">Pod</span>
+            <span class="post-date" title="2024-02-29 14:41:51">2024/02/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 Kubernetes "
+           href="/mijunjie/2024/02/29/Kubernetes/%E5%B7%A5%E4%BD%9C%E8%8A%82%E7%82%B9%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/"
+           data-tag="k8s"
+           data-author="" >
+            <span class="post-title" title="K8S 工作节点组件介绍">K8S 工作节点组件介绍</span>
+            <span class="post-date" title="2024-02-29 13:53:53">2024/02/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 Kubernetes "
+           href="/mijunjie/2024/02/29/Kubernetes/%E6%8E%A7%E5%88%B6%E8%8A%82%E7%82%B9%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/"
+           data-tag="k8s"
+           data-author="" >
+            <span class="post-title" title="K8S 控制节点组件介绍">K8S 控制节点组件介绍</span>
+            <span class="post-date" title="2024-02-29 10:23:42">2024/02/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 Linux "
+           href="/mijunjie/2024/02/21/linux_foundation/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 基本认识">Linux 基本认识</span>
+            <span class="post-date" title="2024-02-21 23:07:27">2024/02/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 Docker "
+           href="/mijunjie/2024/01/26/docker_foundation/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="Docker 基本使用">Docker 基本使用</span>
+            <span class="post-date" title="2024-01-26 15:48:00">2024/01/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/mijunjie/2024/01/19/create_github_io/"
+           data-tag="create github"
+           data-author="" >
+            <span class="post-title" title="Github 测试使用">Github 测试使用</span>
+            <span class="post-date" title="2024-01-19 14:08:52">2024/01/19</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Kubernetes/Kubernetes命令参考" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Kubernetes 命令参考</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Kubernetes">Kubernetes</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">k8s</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-03-05 17:53:47'>2024-02-29 19:05</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubectl-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="toc-text">Kubectl 自动补全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubectl-%E9%80%9F%E8%AE%B0%E5%88%AB%E5%90%8D"><span class="toc-text">Kubectl 速记别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubectl-get"><span class="toc-text">Kubectl get</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubectl-apply"><span class="toc-text">Kubectl apply</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kubectl-%E6%9B%B4%E6%96%B0%E8%B5%84%E6%BA%90"><span class="toc-text">kubectl 更新资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubectl-%E7%BC%96%E8%BE%91%E8%B5%84%E6%BA%90"><span class="toc-text">Kubectl 编辑资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kubectl-%E8%BF%9B%E8%A1%8C%E6%89%A9%E7%BC%A9"><span class="toc-text">kubectl 进行扩缩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubectl-%E5%88%A0%E9%99%A4%E8%B5%84%E6%BA%90"><span class="toc-text">Kubectl 删除资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E%E8%BF%90%E8%A1%8C%E4%B8%AD%E7%9A%84Pod%E4%BA%A4%E4%BA%92"><span class="toc-text">与运行中的Pod交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">从容器中复制文件和目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E%E8%8A%82%E7%82%B9%E5%92%8C%E9%9B%86%E7%BE%A4%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92"><span class="toc-text">与节点和集群进行交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E-Deployments-%E5%92%8C-Services-%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92"><span class="toc-text">与 Deployments 和 Services 进行交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B"><span class="toc-text">资源类型</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>列举常用的<code>kubectl</code>命令和参数。</p>
+<h4 id="Kubectl-自动补全"><a href="#Kubectl-自动补全" class="headerlink" title="Kubectl 自动补全"></a>Kubectl 自动补全</h4><p>BASH</p>
+<pre><code class="bash">$ source &lt;(kubectl completion bash)     # 在 bash 中设置当前 shell 的自动补全，要先安装 bash-completion 包 
+$ echo &quot;source &lt;(kubectl completion bash)&quot; &gt;&gt; ~/.bashrc     # 在你的 bash shell 中永久地添加自动补全
+</code></pre>
+<p>ZSH</p>
+<pre><code class="zsh">$ source &lt;(kubectl completion zsh)      # 在 zsh 中设置当前 shell 的自动补全
+$ echo &#39;[[ $commands[kubectl] ]] &amp;&amp; source &lt;(kubectl completion zsh)&#39; &gt;&gt; ~/.zshrc   # 在你的 zsh shell 中永久地添加自动补全
+</code></pre>
+<h4 id="Kubectl-速记别名"><a href="#Kubectl-速记别名" class="headerlink" title="Kubectl 速记别名"></a>Kubectl 速记别名</h4><pre><code class="bash">$ alias k=kubectl
+$ complete -o default -F __start_kubectl k
+</code></pre>
+<blockquote>
+<p>我们经常使用的<code>kubectl get pod --all-namespaces</code>中的–all-namespaces参数，可以简写为<code>kubectl get pod -A </code>。</p>
+</blockquote>
+<h4 id="Kubectl-get"><a href="#Kubectl-get" class="headerlink" title="Kubectl get"></a>Kubectl get</h4><pre><code class="bash">$ kubectl get all -n namespaces         #列出指定命名空间下的所有信息
+$ kubectl get services                  #列出当前命名空间下的所有 Service
+$ kubectl get pods --all-namespaces     #列出所有命名空间下的全部的 Pod
+$ kubectl get pods -o wide              #列出所有当前命名空间下的全部Pod并显示更详细的信息
+$ kubectl get pods                      #列出当前命名空间下的全部 Pod
+$ kubectl get deployment my-dep         #列出某个特定的 Deployment
+$ kubectl get pod my-pod -o yaml        #获取一个 Pod 的yaml
+
+#describe命令的详细输出
+$ kubectl describe nodes my-nodes  
+$ kubectl describe pods my-pod
+
+$ kubectl describe pod my-pod                                   #列出Pod中容器的状态
+$ kubectl get services --sort-by=.metadata.name                 #列出当前命名空间所有 Service，按名称排序
+$ kubectl get pods --sort-by=&#39;.status.containerStatuses[0].restartCount&#39;    #列出 Pod，按重启次数排序
+$ kubectl get pv --sort-by=.spec.capacity.storage               #列举所有 PV 持久卷，按容量排序
+$ kubectl get node --selector=&#39;!node-role.kubernetes.io/control-plane&#39;  #获取所有工作节点（使用选择算符以排除标签名称为 &#39;node-role.kubernetes.io/control-plane&#39; 的结果）
+$ kubectl get pods --field-selector=status.phase=Running        #获取当前命名空间中正在运行的 Pod
+$ kubectl get pods --show-labels                                #显示所有 Pod 的标签（或任何其他支持标签的 Kubernetes 对象）
+$ kubectl get pods -o json | jq &#39;.items[].spec.containers[].env[]?.valueFrom.secretKeyRef.name&#39; | grep -v null | sort | uniq    #列出被一个 Pod 使用的全部 Secret
+$ kubectl get pods --all-namespaces -o jsonpath=&#39;&#123;range .items[*].status.initContainerStatuses[*]&#125;&#123;.containerID&#125;&#123;&quot;\n&quot;&#125;&#123;end&#125;&#39; | cut -d/ -f3  #列举所有 Pod 中初始化容器的容器 ID（containerID）,可用于在清理已停止的容器时避免删除初始化容器
+$ kubectl get events --sort-by=.metadata.creationTimestamp      #列出事件（Event），按时间戳排序
+$ kubectl events --types=Warning                                #列出所有警告事件
+$ kubectl get deployment nginx-deployment --subresource=status  #获取一个 Deployment 的 status 子资源
+</code></pre>
+<h4 id="Kubectl-apply"><a href="#Kubectl-apply" class="headerlink" title="Kubectl apply"></a>Kubectl apply</h4><blockquote>
+<p><code>apply</code>通过定义Kubernetes资源的文件来管理应用。通过执行<code>kubectl apply</code>在集群中创建和更新资源。<br>Kubernetes配置可以用yaml或json定义，可以使用的文件扩展名有.yaml yml 和.json。</p>
+</blockquote>
+<pre><code class="bash">$ kubectl apply -f ./myfile.yaml                        #创建资源
+$ kubectl apply -f ./myfile1.yaml -f ./myfile2.yaml     #使用多个文件创建
+$ kubectl apply -f ./dir                                #基于目录下的所有文件创建资源
+$ kubectl apply -f https://example.com/myfile.yaml      #从URL中创建资源
+$ kubectl create deployment nginx --image=nginx         #启动单实例nginx
+$ kubectl create token admin-user -n kube-system        #创建token
+</code></pre>
+<h4 id="kubectl-更新资源"><a href="#kubectl-更新资源" class="headerlink" title="kubectl 更新资源"></a>kubectl 更新资源</h4><pre><code class="bash">$ kubectl set image deployment/frontend www=image:v2               # 滚动更新 &quot;frontend&quot; Deployment 的 &quot;www&quot; 容器镜像
+$ kubectl rollout history deployment/frontend                      # 检查 Deployment 的历史记录，包括版本
+$ kubectl rollout undo deployment/frontend                         # 回滚到上次部署版本
+$ kubectl rollout undo deployment/frontend --to-revision=2         # 回滚到特定部署版本
+$ kubectl rollout status -w deployment/frontend                    # 监视 &quot;frontend&quot; Deployment 的滚动升级状态直到完成
+$ kubectl rollout restart deployment/frontend                      # 轮替重启 &quot;frontend&quot; Deployment
+$ kubectl expose rc nginx --port=80 --target-port=8000             # 为多副本的 nginx 创建服务，使用 80 端口提供服务，连接到容器的 8000 端口
+$ kubectl label pods my-pod new-label=awesome                      # 添加标签
+$ kubectl label pods my-pod new-label-                             # 移除标签
+$ kubectl label pods my-pod new-label=new-value --overwrite        # 覆盖现有的值
+$ kubectl annotate pods my-pod icon-url=http://goo.gl/XXBTWq       # 添加注解
+$ kubectl annotate pods my-pod icon-url-                           # 移除注解
+$ kubectl autoscale deployment foo --min=2 --max=10                # 对 &quot;foo&quot; Deployment 自动扩缩容
+</code></pre>
+<h4 id="Kubectl-编辑资源"><a href="#Kubectl-编辑资源" class="headerlink" title="Kubectl 编辑资源"></a>Kubectl 编辑资源</h4><pre><code class="bash">$ kubectl edit svc/docker-registry                      # 编辑名为 docker-registry 的服务
+KUBE_EDITOR=&quot;nano&quot; kubectl edit svc/docker-registry     # 使用其他编辑器,使用偏爱的编辑器编辑 API 资源。
+</code></pre>
+<h4 id="kubectl-进行扩缩"><a href="#kubectl-进行扩缩" class="headerlink" title="kubectl 进行扩缩"></a>kubectl 进行扩缩</h4><pre><code class="bash">$ kubectl scale --replicas=3 rs/foo                                 # 将名为 &#39;foo&#39; 的副本集扩缩到 3 副本
+$ kubectl scale --replicas=3 -f foo.yaml                            # 将在 &quot;foo.yaml&quot; 中的特定资源扩缩到 3 个副本
+$ kubectl scale --current-replicas=2 --replicas=3 deployment/mysql  # 如果名为 mysql 的 Deployment 的副本当前是 2，那么将它扩缩到 3
+$ kubectl scale --replicas=5 rc/foo rc/bar rc/baz                   # 扩缩多个副本控制器
+</code></pre>
+<h4 id="Kubectl-删除资源"><a href="#Kubectl-删除资源" class="headerlink" title="Kubectl 删除资源"></a>Kubectl 删除资源</h4><pre><code class="bash">$ kubectl delete pod podname                                                # 删除一个自己创建的 Pod
+$ kubectl delete -f ./pod.json                                              # 删除在 pod.json 中指定的类型和名称的 Pod
+$ kubectl delete pod unwanted --now                                         # 删除 Pod 且无宽限期限（无优雅时段）
+$ kubectl delete pod,service baz foo                                        # 删除名称为 &quot;baz&quot; 和 &quot;foo&quot; 的 Pod 和服务
+$ kubectl delete pods,services -l name=myLabel                              # 删除包含 name=myLabel 标签的 Pod 和服务
+$ kubectl -n my-ns delete pod,svc --all                                     # 删除在 my-ns 名字空间中全部的 Pod 和服务
+$ kubectl get pods  -n mynamespace --no-headers=true | awk &#39;/pattern1|pattern2/&#123;print $1&#125;&#39; | xargs  kubectl delete -n mynamespace pod     # 删除所有与 pattern1 或 pattern2 awk 模式匹配的 Pod
+</code></pre>
+<h4 id="与运行中的Pod交互"><a href="#与运行中的Pod交互" class="headerlink" title="与运行中的Pod交互"></a>与运行中的Pod交互</h4><pre><code class="bash">$ kubectl logs my-pod                                       # 获取 Pod 日志（标准输出）
+$ kubectl logs -l name=myLabel                              # 获取含 name=myLabel 标签的 Pod 的日志（标准输出）
+$ kubectl logs my-pod --previous                            # 获取上个容器实例的 Pod 日志（标准输出）
+$ kubectl logs my-pod -c my-container                       # 获取 Pod 容器的日志（标准输出, 多容器场景）
+$ kubectl logs -l name=myLabel -c my-container              # 获取含 name=myLabel 标签的 Pod 容器日志（标准输出, 多容器场景）
+$ kubectl logs my-pod -c my-container --previous            # 获取 Pod 中某容器的上个实例的日志（标准输出, 多容器场景）
+$ kubectl logs -f my-pod                                    # 流式输出 Pod 的日志（标准输出）
+$ kubectl logs -f my-pod -c my-container                    # 流式输出 Pod 容器的日志（标准输出, 多容器场景）
+$ kubectl logs -f -l name=myLabel --all-containers          # 流式输出含 name=myLabel 标签的 Pod 的所有日志（标准输出）
+$ kubectl run -i --tty busybox --image=busybox:1.28 -- sh   # 以交互式 Shell 运行 Pod
+$ kubectl run nginx --image=nginx -n mynamespace            # 在 “mynamespace” 命名空间中运行单个 nginx Pod
+$ kubectl run nginx --image=nginx --dry-run=client -o yaml &gt; pod.yaml # 为运行 nginx Pod 生成规约并将其写入到名为 pod.yaml 的文件
+
+$ kubectl attach my-pod -i                                    # 挂接到一个运行的容器中
+$ kubectl port-forward my-pod 5000:6000                       # 在本地计算机上侦听端口 5000 并转发到 my-pod 上的端口 6000
+$ kubectl exec my-pod -- ls /                                 # 在已有的 Pod 中运行命令（单容器场景）
+$ kubectl exec --stdin --tty my-pod -- /bin/sh                # 使用交互 shell 访问正在运行的 Pod (一个容器场景)
+$ kubectl exec my-pod -c my-container -- ls /                 # 在已有的 Pod 中运行命令（多容器场景）
+$ kubectl top pod POD_NAME --containers                       # 显示给定 Pod 和其中容器的监控数据
+$ kubectl top pod POD_NAME --sort-by=cpu                      # 显示给定 Pod 的指标并且按照 &#39;cpu&#39; 或者 &#39;memory&#39; 排序
+</code></pre>
+<h4 id="从容器中复制文件和目录"><a href="#从容器中复制文件和目录" class="headerlink" title="从容器中复制文件和目录"></a>从容器中复制文件和目录</h4><pre><code class="bash">$ kubectl cp /tmp/foo_dir my-pod:/tmp/bar_dir            # 将 /tmp/foo_dir 本地目录复制到远程当前命名空间中 Pod 中的 /tmp/bar_dir
+$ kubectl cp /tmp/foo my-pod:/tmp/bar -c my-container    # 将 /tmp/foo 本地文件复制到远程 Pod 中特定容器的 /tmp/bar 下
+$ kubectl cp /tmp/foo my-namespace/my-pod:/tmp/bar       # 将 /tmp/foo 本地文件复制到远程 “my-namespace” 命名空间内指定 Pod 中的 /tmp/bar
+kubectl cp my-namespace/my-pod:/tmp/foo /tmp/bar       # 将 /tmp/foo 从远程 Pod 复制到本地 /tmp/bar
+</code></pre>
+<blockquote>
+<p>kubectl cp 要求容器镜像中存在 “tar” 二进制文件。如果 “tar” 不存在，kubectl cp 将失败。 对于进阶用例，例如符号链接、通配符扩展或保留文件权限，请考虑使用 kubectl exec。</p>
+</blockquote>
+<pre><code class="bash">$ tar cf - /tmp/foo | kubectl exec -i -n my-namespace my-pod -- tar xf - -C /tmp/bar  # 将 /tmp/foo 本地文件复制到远程 “my-namespace” 命名空间中 Pod 中的 /tmp/bar
+$ kubectl exec -n my-namespace my-pod -- tar cf - /tmp/foo | tar xf - -C /tmp/bar    # 将 /tmp/foo 从远程 Pod 复制到本地 /tmp/bar
+</code></pre>
+<h4 id="与节点和集群进行交互"><a href="#与节点和集群进行交互" class="headerlink" title="与节点和集群进行交互"></a>与节点和集群进行交互</h4><pre><code class="bash">$ kubectl cordon my-node                                                # 标记 my-node 节点为不可调度
+$ kubectl drain my-node                                                 # 对 my-node 节点进行清空操作，为节点维护做准备
+$ kubectl uncordon my-node                                              # 标记 my-node 节点为可以调度
+$ kubectl top node my-node                                              # 显示给定节点的度量值
+$ kubectl cluster-info                                                  # 显示主控节点和服务的地址
+$ kubectl cluster-info dump                                             # 将当前集群状态转储到标准输出
+$ kubectl cluster-info dump --output-directory=/path/to/cluster-state   # 将当前集群状态输出到 /path/to/cluster-state
+# 查看当前节点上存在的现有污点
+$ kubectl get nodes -o=&#39;custom-columns=NodeName:.metadata.name,TaintKey:.spec.taints[*].key,TaintValue:.spec.taints[*].value,TaintEffect:.spec.taints[*].effect&#39;
+# 如果已存在具有指定键和效果的污点，则替换其值为指定值
+$ kubectl taint nodes foo dedicated=special-user:NoSchedule
+</code></pre>
+<h4 id="与-Deployments-和-Services-进行交互"><a href="#与-Deployments-和-Services-进行交互" class="headerlink" title="与 Deployments 和 Services 进行交互"></a>与 Deployments 和 Services 进行交互</h4><pre><code class="bash">$ kubectl logs deploy/my-deployment                         # 获取一个 Deployment 的 Pod 的日志（单容器例子）
+$ kubectl logs deploy/my-deployment -c my-container         # 获取一个 Deployment 的 Pod 的日志（多容器例子）
+
+$ kubectl port-forward svc/my-service 5000                  # 侦听本地端口 5000 并转发到 Service 后端端口 5000
+$ kubectl port-forward svc/my-service 5000:my-service-port  # 侦听本地端口 5000 并转发到名字为 &lt;my-service-port&gt; 的 Service 目标端口
+
+$ kubectl port-forward deploy/my-deployment 5000:6000       # 侦听本地端口 5000 并转发到 &lt;my-deployment&gt; 创建的 Pod 里的端口 6000
+$ kubectl exec deploy/my-deployment -- ls                   # 在 Deployment 里的第一个 Pod 的第一个容器里运行命令（单容器和多容器例子）
+</code></pre>
+<h4 id="资源类型"><a href="#资源类型" class="headerlink" title="资源类型"></a>资源类型</h4><pre><code class="bash">$ kubectl api-resources
+</code></pre>
+<pre><code class="bash">$ kubectl api-resources --namespaced=true      # 所有命名空间作用域的资源
+$ kubectl api-resources --namespaced=false     # 所有非命名空间作用域的资源
+$ kubectl api-resources -o name                # 用简单格式列举所有资源（仅显示资源名称）
+$ kubectl api-resources -o wide                # 用扩展格式列举所有资源（又称 &quot;wide&quot; 格式）
+$ kubectl api-resources --verbs=list,get       # 支持 &quot;list&quot; 和 &quot;get&quot; 请求动词的所有资源
+$ kubectl api-resources --api-group=extensions # &quot;extensions&quot; API 组中的所有资源
+</code></pre>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©lover Panxiaoyu
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/mijunjie/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/mijunjie/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

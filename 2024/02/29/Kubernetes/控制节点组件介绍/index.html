@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>欢迎来到米俊杰的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="欢迎来到米俊杰的博客">
+  <title>K8S 控制节点组件介绍 | 欢迎来到米俊杰的博客</title>
+  <meta name="keywords" content=" k8s ">
+  <meta name="description" content="K8S 控制节点组件介绍 | 欢迎来到米俊杰的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="website">
@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/mijunjie/"
    class="avatar_target">
@@ -344,12 +344,58 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Kubernetes/控制节点组件介绍" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#My-study-club"><span class="toc-text">My study club</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#I-will-gradually-document-my-learning-process-here"><span class="toc-text">I will gradually document my learning process here</span></a></li></ol></li></ol>
+        <h1 class="article-title">K8S 控制节点组件介绍</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Kubernetes">Kubernetes</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">k8s</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-03-04 14:20:53'>2024-02-29 10:23</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93%EF%BC%9A"><span class="toc-text">小结：</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -362,12 +408,38 @@
     }
 </style>
 </div>
-            <h1 id="My-study-club"><a href="#My-study-club" class="headerlink" title="My study club"></a>My study club</h1><h2 id="I-will-gradually-document-my-learning-process-here"><a href="#I-will-gradually-document-my-learning-process-here" class="headerlink" title="I will gradually document my learning process here"></a>I will gradually document my learning process here</h2><p>从来都不会有第二个你，你也不会成为第二个别人。我们都是最了不起的自己。毕竟人生不是数学题，没有一个100%可靠的公式能够让你去计算出自己的未来，然后按步照搬的一步步解出答案。热爱各有不同，我们本该如此，每一代逐日移山的青年，都有自己奋不顾身的热爱，每一份炽烈的热爱都值得被用心对待。</p>
-<p>There will never be a second you, nor will you become the second someone else. We are all the most amazing selves. After all, life is not a math problem, and there is no 100% reliable formula that can help you calculate your future and then solve the answer step by step by copying it. Love varies, and we should be like this. Every generation of young people who move mountains day by day has their own selfless love, and every passionate love is worth treating with care.</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>APIServer - APIServer是整个集群的控制中枢，提供集群中各个模块之间的数据交换，并将集群状态和信息存储到分布式 键-值（key-value） 存储系统Etcd集群中。同时它也是集群管理、资源配额、提供完备的集群安全机制的入口，为集群各类资源对象提供增删改查以及watch的 REST API 接口。</li>
+<li>Scheduler - Scheduler是集群Pod的调度中心，主要是通过调度算法将Pod分配到最佳的Node节点，它通过APIServer监听所有Pod的状态，一旦发现新的未被调度到任何Node节点的Pod（PodSpecNodeName为空），就会根据一系列策略选择最佳节点进行调度。</li>
+<li>Controller Manage - Controller Manage是集群状态管理器，以保证Pod或其他资源达到期望值。当集群中某个Pod的副本数或其他资源因故障喝错误导致无法正常运行，没有达到设定的值时，Controller Manage会尝试自动修复并使其达到期望状态。</li>
+<li>Etcd - Etcd由Core OS开发，用于可靠地存储集群的配置数据，是一种持久性、轻量型、分布式的 键-值（key-value）数据存储组件，作为Kubernetes集群的持久话存储系统。</li>
+</ul>
+<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><ul>
+<li>APIServer是无状态服务，每个Master节点都会运行。</li>
+<li>Scheduler和Controller Manage是有状态服务，两者均有选主的功能，防止重复调用问题出现。</li>
+<li>1.24版本或者1.20版本前Scheduler和Controller Manage的主节点保存在leases中，可以通过<code>kubectl get leases -n kube-system</code>查看。</li>
+</ul>
+<p>kubectl get ep -n kube-system</p>
 
-        </article>
-        
-        
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -376,11 +448,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>

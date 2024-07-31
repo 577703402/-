@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>欢迎来到米俊杰的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="欢迎来到米俊杰的博客">
+  <title>Kubernetes集群可用性验证 | 欢迎来到米俊杰的博客</title>
+  <meta name="keywords" content=" k8s ">
+  <meta name="description" content="Kubernetes集群可用性验证 | 欢迎来到米俊杰的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="website">
@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/mijunjie/"
    class="avatar_target">
@@ -344,12 +344,58 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Kubernetes/集群可用性验证" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#My-study-club"><span class="toc-text">My study club</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#I-will-gradually-document-my-learning-process-here"><span class="toc-text">I will gradually document my learning process here</span></a></li></ol></li></ol>
+        <h1 class="article-title">Kubernetes集群可用性验证</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Kubernetes">Kubernetes</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">k8s</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-03-05 11:58:34'>2024-03-04 23:05</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
     
 <style>
     .left-col .switch-btn,
@@ -362,12 +408,57 @@
     }
 </style>
 </div>
-            <h1 id="My-study-club"><a href="#My-study-club" class="headerlink" title="My study club"></a>My study club</h1><h2 id="I-will-gradually-document-my-learning-process-here"><a href="#I-will-gradually-document-my-learning-process-here" class="headerlink" title="I will gradually document my learning process here"></a>I will gradually document my learning process here</h2><p>从来都不会有第二个你，你也不会成为第二个别人。我们都是最了不起的自己。毕竟人生不是数学题，没有一个100%可靠的公式能够让你去计算出自己的未来，然后按步照搬的一步步解出答案。热爱各有不同，我们本该如此，每一代逐日移山的青年，都有自己奋不顾身的热爱，每一份炽烈的热爱都值得被用心对待。</p>
-<p>There will never be a second you, nor will you become the second someone else. We are all the most amazing selves. After all, life is not a math problem, and there is no 100% reliable formula that can help you calculate your future and then solve the answer step by step by copying it. Love varies, and we should be like this. Every generation of young people who move mountains day by day has their own selfless love, and every passionate love is worth treating with care.</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>节点是否正常<blockquote>
+<p>$ kubectl get node</p>
+</blockquote>
+</li>
+<li>Pod是否正常<blockquote>
+<p>$ kubectl get pod -A</p>
+</blockquote>
+</li>
+<li>集群网段是否存在冲突<blockquote>
+<ol>
+<li>$ kubectl get svc</li>
+<li>$ kubectl get pod -A -o wide</li>
+</ol>
+</blockquote>
+</li>
+<li>是否可以正常创建Pod资源<blockquote>
+<p>$ kubectl create deploy cluster-test –image&#x3D;registry.cn-beijing.aliyuncs.com&#x2F;dotbalo&#x2F;debug-toos – sleep 3600</p>
+</blockquote>
+</li>
+<li>Pod是否能够解析Service（同namespace和跨namespace）<blockquote>
+<ol>
+<li>$ nslookup kubernetes</li>
+<li>$ nslookup kube-dns.kube-system</li>
+</ol>
+</blockquote>
+</li>
+<li>每个节点是否能够访问Kubernetes的kubernetes svc 443和kube-dns的service 53端口</li>
+<li>Pod和Pod之间是否能够正常通讯（同namespace和跨namespace）</li>
+<li>Pod和Pod之间是否能够正常通讯（同机器和跨机器）</li>
+</ul>
 
-        </article>
-        
-        
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -376,11 +467,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>

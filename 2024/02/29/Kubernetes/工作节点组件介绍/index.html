@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>欢迎来到米俊杰的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="欢迎来到米俊杰的博客">
+  <title>K8S 工作节点组件介绍 | 欢迎来到米俊杰的博客</title>
+  <meta name="keywords" content=" k8s ">
+  <meta name="description" content="K8S 工作节点组件介绍 | 欢迎来到米俊杰的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="website">
@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/mijunjie/"
    class="avatar_target">
@@ -344,12 +344,58 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Kubernetes/工作节点组件介绍" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#My-study-club"><span class="toc-text">My study club</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#I-will-gradually-document-my-learning-process-here"><span class="toc-text">I will gradually document my learning process here</span></a></li></ol></li></ol>
+        <h1 class="article-title">K8S 工作节点组件介绍</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Kubernetes">Kubernetes</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">k8s</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-02-29 14:40:46'>2024-02-29 13:53</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -362,12 +408,36 @@
     }
 </style>
 </div>
-            <h1 id="My-study-club"><a href="#My-study-club" class="headerlink" title="My study club"></a>My study club</h1><h2 id="I-will-gradually-document-my-learning-process-here"><a href="#I-will-gradually-document-my-learning-process-here" class="headerlink" title="I will gradually document my learning process here"></a>I will gradually document my learning process here</h2><p>从来都不会有第二个你，你也不会成为第二个别人。我们都是最了不起的自己。毕竟人生不是数学题，没有一个100%可靠的公式能够让你去计算出自己的未来，然后按步照搬的一步步解出答案。热爱各有不同，我们本该如此，每一代逐日移山的青年，都有自己奋不顾身的热爱，每一份炽烈的热爱都值得被用心对待。</p>
-<p>There will never be a second you, nor will you become the second someone else. We are all the most amazing selves. After all, life is not a math problem, and there is no 100% reliable formula that can help you calculate your future and then solve the answer step by step by copying it. Love varies, and we should be like this. Every generation of young people who move mountains day by day has their own selfless love, and every passionate love is worth treating with care.</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Kubelet： 负责与Master通信协作，管理该节点上的Pod，对容器进行健康检查及监控，同时负责上报节点和节点上面Pod的状态。</li>
+<li>Kube-Porxy： 负责各Pod之间的通信和负载均衡，将指定的流量分发到后端正确的机器上。</li>
+<li>Runtime： 负责容器的管理。</li>
+<li>CoreDNS： 用于Kubernetes集群内部Server的解析，可以让Pod把Service名称解析成Service的IP，然后通过Service的IP地址进行连接到对应的应用上。</li>
+<li>Calico： 符合CNI标准的一个网络插件，负责给每个Pod分配一个不会重复的IP，并且吧每个节点当作一个“路由器”，这样一个节点的Pod就可以通过IP地址访问到其他节点的Pod。</li>
+</ul>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><ul>
+<li>Kubelet上报到APIServer，APIServer会将这些信息存储到Etcd。</li>
+</ul>
 
-        </article>
-        
-        
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -376,11 +446,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>

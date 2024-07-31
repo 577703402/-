@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>欢迎来到米俊杰的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="欢迎来到米俊杰的博客">
+  <title>Linux 基本认识 | 欢迎来到米俊杰的博客</title>
+  <meta name="keywords" content=" linux ">
+  <meta name="description" content="Linux 基本认识 | 欢迎来到米俊杰的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="website">
@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/mijunjie/"
    class="avatar_target">
@@ -344,12 +344,58 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-linux_foundation" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#My-study-club"><span class="toc-text">My study club</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#I-will-gradually-document-my-learning-process-here"><span class="toc-text">I will gradually document my learning process here</span></a></li></ol></li></ol>
+        <h1 class="article-title">Linux 基本认识</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Linux">Linux</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">linux</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-03-01 22:50:27'>2024-02-21 23:07</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D"><span class="toc-text">Linux 系统介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="toc-text">系统启动流程</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -362,12 +408,47 @@
     }
 </style>
 </div>
-            <h1 id="My-study-club"><a href="#My-study-club" class="headerlink" title="My study club"></a>My study club</h1><h2 id="I-will-gradually-document-my-learning-process-here"><a href="#I-will-gradually-document-my-learning-process-here" class="headerlink" title="I will gradually document my learning process here"></a>I will gradually document my learning process here</h2><p>从来都不会有第二个你，你也不会成为第二个别人。我们都是最了不起的自己。毕竟人生不是数学题，没有一个100%可靠的公式能够让你去计算出自己的未来，然后按步照搬的一步步解出答案。热爱各有不同，我们本该如此，每一代逐日移山的青年，都有自己奋不顾身的热爱，每一份炽烈的热爱都值得被用心对待。</p>
-<p>There will never be a second you, nor will you become the second someone else. We are all the most amazing selves. After all, life is not a math problem, and there is no 100% reliable formula that can help you calculate your future and then solve the answer step by step by copying it. Love varies, and we should be like this. Every generation of young people who move mountains day by day has their own selfless love, and every passionate love is worth treating with care.</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Linux-系统介绍"><a href="#Linux-系统介绍" class="headerlink" title="Linux 系统介绍"></a>Linux 系统介绍</h3><ol>
+<li>组成说明<br>Linux操作系统由linux内核和各种外围程序组成。<blockquote>
+<p>内核是一个特殊的软件程序，用于实现CPU和内存分配，进程调度，设备驱动等核心操作，以面向硬件为主。<br>外围程序包括分析用户指令的解释器，网络服务程序，图形桌面程序等各种应用型的软件程序，以面向用户为主。<br>内核的主要功能：① 识别硬件并驱使硬件工作，② 为外围程序提供运行平台。</p>
+</blockquote>
+</li>
+<li>Shell<br>就是一个命令行工具。<blockquote>
+<p>shell也称为终端或壳充当的是人与内核（硬件）之间的翻译官，用户把一些命令告诉终端，他就会调用相对应的程序服务去完成某些工作，主流Linux系统选择Bash解释器作为命令行终端。</p>
+</blockquote>
+</li>
+<li>内核说明<br>Linux内核的官方网站是http：&#x2F;&#x2F;<a target="_blank" rel="noopener" href="http://www.kernel.org/">www.kernel.org/</a><blockquote>
+<p>Linux内核最初由芬兰大学许李纳斯·托沃兹（Linus Torvalds）在1991年发布，主要是使用C语言及一小部分汇编语言开发而成。<br>Linux内核的标志是一个名为Tux的小企鹅；1994年3月，Linux1.0版本发布。</p>
+</blockquote>
+</li>
+<li>外围程序说明<br>构成Linux系统的外围程序大部分来自于GNU项目或其他组织的开源软件。<blockquote>
+<p>如：C语言编译工具gcc，命令解释器程序bash，网站服务器程序httpd等。<br>GNU名称来源于GNU is not unix的缩写，由自由软件运动的倡导者Richard stallman与1984年开始发起并创建，其目标是编写大量兼容于UNIX操作系统的可自由传播，使用的软件用于替换UNIX系统中的各种商业软件。<br>GNU项目的官方网站位于：http：&#x2F;&#x2F;<a target="_blank" rel="noopener" href="http://www.gnu.org/">www.gnu.org/</a></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="系统启动流程"><a href="#系统启动流程" class="headerlink" title="系统启动流程"></a>系统启动流程</h3><blockquote>
+<p>设备开机按钮 -&gt; 主板供电 -&gt; bios加点自检 -&gt; 检测硬件 -&gt; 根据bios决定启动介质 -&gt; 寻找磁盘上的MBR；加载bootloader -&gt; 内核启动init -&gt; 系统初始化 -&gt; &#x2F;etc&#x2F;inittab判断启动级别 -&gt; 读取&#x2F;etc&#x2F;rc.d&#x2F;rcX.d下的脚本文件，运行各种应用软件 -&gt; &#x2F;etc&#x2F;rc.local文件，进入到登录界面 -&gt; 输入用户账号和密码 -&gt; &#x2F;etc&#x2F;profile。<br>其实在运行内核后可以简单理解为：启动init进程，做初始化，读取各种文件，开启进程；bios会检测硬件，是一组固化到计算机主板上的一个ROM芯片上的程序，保存着最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序；主要功能是为计算机提供最底层的、最直接的硬件设置和控制。MBR：主引导记录，大小512字节；bootloader引导加载程序，存储的是开机管理程序，对于Linux来说就是grub程序；主要功能识别操作系统的文件系统格式及加载内核和驱动；bootloader其实是分为两个阶段完成的。</p>
+</blockquote>
 
-        </article>
-        
-        
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -376,11 +457,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
